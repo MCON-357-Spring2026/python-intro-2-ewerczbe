@@ -10,11 +10,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run demo files
+
+      - name: Install dependencies
         run: |
-          python demo/01_variables_and_types.py
-          python demo/02_loops_and_ranges.py
-          python demo/03_lists.py
-          python demo/04_tuples.py
-          python demo/05_dictionaries.py
-          python demo/06_functions.py
+          pip install -r requirements.txt
+
+      - name: Run pytest tests
+        run: |
+          pytest exercises/test/ -v --tb=short
+
+      - name: Autograding
+        uses: education/autograding@v1

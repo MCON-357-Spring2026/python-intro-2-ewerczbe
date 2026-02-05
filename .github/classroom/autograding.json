@@ -1,0 +1,45 @@
+{
+  "tests": [
+    {
+      "name": "Functions Tests",
+      "setup": "pip install -r requirements.txt",
+      "run": "pytest exercises/test/functions_test.py -v",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Classes Tests",
+      "setup": "",
+      "run": "pytest exercises/test/classes_test.py -v",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "File Operations Tests",
+      "setup": "",
+      "run": "pytest exercises/test/file_test.py -v",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Project Tests",
+      "setup": "",
+      "run": "pytest exercises/test/project_test.py -v",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    }
+  ]
+}
+
