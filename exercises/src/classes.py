@@ -10,7 +10,7 @@ Instructions:
 
 Run with: python exercise_2_classes.py
 """
-
+from calendar import error
 
 # =============================================================================
 # EXERCISE 2.1: Basic Class with Constructor
@@ -36,16 +36,20 @@ Example:
 
 class Product:
     def __init__(self, name: str, price: float, quantity: int = 0):
-        # TODO: Initialize instance attributes
+        self.name = name
+        self.price = price
+        self.quantity = quantity
         pass
 
     def get_total_value(self) -> float:
         # TODO: Return price * quantity
-        pass
+       return self.price * self.quantity
+
 
     def is_in_stock(self) -> bool:
         # TODO: Return True if quantity > 0
-        pass
+        return self.quantity > 0
+
 
 
 # =============================================================================
@@ -80,19 +84,28 @@ Example:
 
 class BankAccount:
     # TODO: Add class attributes here
+    bank_name = "Python Bank"
+    total_accounts = 0
 
     def __init__(self, account_number: str, owner: str, balance: float = 0.0):
         # TODO: Initialize instance attributes
         # TODO: Increment total_accounts
+        self.account_number = account_number
+        self.owner = owner
+        self.balance = float(balance)
+        self.total_accounts = self.total_accounts + 1
         pass
 
     def deposit(self, amount: float) -> float:
         # TODO: Add amount to balance and return new balance
-        pass
+        return self.balance + amount
 
     def withdraw(self, amount: float) -> float:
         # TODO: Subtract amount from balance
         # TODO: Raise ValueError if amount > balance
+        try:
+            self.balance = self.balance - amount
+        except: ValueError("Insufficient funds")
         pass
 
     def get_info(self) -> str:
