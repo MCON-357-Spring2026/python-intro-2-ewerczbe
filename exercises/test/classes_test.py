@@ -1,5 +1,5 @@
 import pytest
-from exercises.src.classes import *
+from classes import *
 
 
 class TestProduct:
